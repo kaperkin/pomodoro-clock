@@ -5,20 +5,30 @@
     var counter; //1000 will run it every 1 second
     var reset = document.getElementById('reset');
     var start = document.getElementById('start');
+    var plus = document.getElementById('plus');
+    var minus = document.getElementById('minus');
     start.addEventListener('click', startTimer);
     reset.addEventListener('click', resetTimer);
+    plus.addEventListener('click', function(){
+        count += 1;
+        countdown.innerHTML = count;
+        return count;
+    });
 
-    countdown.innerHTML = count;
-
-
+    minus.addEventListener('click', function(){
+        count -= 1;
+        countdown.innerHTML = count;
+        return count;
+    });
 
     function timer() {
-        countdown.innerHTML = count;
+
         if (count <= 0) {
             clearInterval(counter);
             countdown.innerHTML = '0';
         }
         count = count - 1;
+        countdown.innerHTML = count;
     }
 
     function resetTimer() {
@@ -33,5 +43,6 @@
         return counter;
     }
 
+     countdown.innerHTML = count;
 })
 ();
