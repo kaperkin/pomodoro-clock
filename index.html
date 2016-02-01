@@ -3,8 +3,8 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='x-us-compatible' content='ie-edge'>
-    <title>Student Says...</title>
-    <meta name='description' content='A collection of things students have told their teachers.'>
+    <title>JavaScript timer</title>
+    <meta name='description' content='Javascript pomodoro timer'>
     <meta name='viewport' content='width-devide-width, initial-scale=1'>
 
     <!-- Latest compiled and minified CSS -->
@@ -30,7 +30,21 @@
 <body>
 
 <div class="container">
-    <div class="countdown"></div>
+    <div class="jumbotron">
+        <button class="btn btn-default" id="start" value="start">Start</button>
+        <button class="btn btn-default" id="reset" value="reset">Reset</button>
+
+        <div class="countdown" id="countdown"></div>
+
+
+        <div class="numbers">
+            <div id="hour">0</div>
+            <div id="tenMinutes">1</div>
+            <div id="minutes">0</div>
+            <div id="tenSeconds">0</div>
+            <div id="seconds">0</div>
+        </div>
+    </div>
 
 </div>
 

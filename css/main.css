@@ -1,0 +1,22 @@
+.container{
+    max-width: 1070px;
+}
+
+.countdown{
+    border: 3px solid #d2cf1f;
+    min-width: 60px;
+    min-height: 80px;
+    left: 0;
+    top: 0;
+    font-size: 3em;
+}
+
+.jumbotron{
+    text-align: center;
+}
+
+.numbers div{
+    border: 1px solid #202020;
+    display: inline-block;
+    padding: 5px;
+}
