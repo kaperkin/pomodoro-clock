@@ -1,48 +1,89 @@
 (function () {
     'use strict';
-    var countdown = document.getElementById("countdown");
-    var count = 10;
-    var counter; //1000 will run it every 1 second
+    var secPlus = document.getElementById('secPlus');
+    var secMinus = document.getElementById('secMinus');
+    var tenSecPlus = document.getElementById('tenSecPlus');
+    var tenSecMinus = document.getElementById('tenSecMinus');
+    var minutePlus = document.getElementById('minutePlus');
+    var minuteMinus = document.getElementById('minuteMinus');
+    var tenMinutePlus = document.getElementById('tenMinutePlus');
+    var tenMinuteMinus = document.getElementById('tenMinuteMinus');
+    var seconds = 0;
+    var tenSeconds = 0;
+    var minutes = 5;
+    var tenMinutes = 2;
+    var showSeconds = document.getElementById('showSeconds');
+    var showTenSeconds = document.getElementById('showTenSeconds');
+    var showMinutes = document.getElementById('showMinutes');
+    var showTenMinutes = document.getElementById('showTenMinutes');
+
     var reset = document.getElementById('reset');
-    var start = document.getElementById('start');
-    var plus = document.getElementById('plus');
-    var minus = document.getElementById('minus');
-    start.addEventListener('click', startTimer);
+    //start.addEventListener('click', startTimer);
     reset.addEventListener('click', resetTimer);
-    plus.addEventListener('click', function(){
-        count += 1;
-        countdown.innerHTML = count;
-        return count;
-    });
-
-    minus.addEventListener('click', function(){
-        count -= 1;
-        countdown.innerHTML = count;
-        return count;
-    });
-
-    function timer() {
-
-        if (count <= 0) {
-            clearInterval(counter);
-            countdown.innerHTML = '0';
+    secPlus.addEventListener('click', addSecond);
+    secMinus.addEventListener('click', function () {
+        if (seconds > 0) {
+            seconds -= 1;
         }
-        count = count - 1;
-        countdown.innerHTML = count;
+       showTime();
+    });
+    tenSecPlus.addEventListener('click', addTenSec);
+    tenSecMinus.addEventListener('click', function () {
+        if (tenSeconds > 0) {
+            tenSeconds -= 1;
+        }
+        showTime();
+    });
+    function addSecond() {
+        seconds += 1;
+        if (seconds === 10) {
+            tenSeconds += 1;
+            seconds = 0;
+        }
+        showTime();
     }
 
+    function addTenSec(){
+        tenSeconds += 1;
+        if(tenSeconds === 10){
+            minutes += 1;
+            tenSeconds = 0;
+        }
+        showTime();
+    }
+
+    //function timer() {
+    //    count = count - 1;
+    //    if (count <= 0) {
+    //        clearInterval(counter);
+    //        countdown.innerHTML = '0';
+    //    }
+    //    countdown.innerHTML = count;
+    //}
+    //
     function resetTimer() {
-        clearInterval(counter);
-        count = 10;
-        countdown.innerHTML = count;
-        return count;
+        //clearInterval(counter);
+        seconds = 0;
+        tenSeconds = 0;
+        minutes = 1;
+        showTime();
+    }
+    //
+    //function startTimer() {
+    //    count = count *60;
+    //    counter = setInterval(timer, 1000);
+    //    return counter;
+    //}
+    //
+    //countdown.innerHTML = count;
+    //countdown.innerHTML = seconds;
+    function showTime() {
+        showSeconds.innerHTML = seconds;
+        showTenSeconds.innerHTML = tenSeconds;
+        showMinutes.innerHTML = minutes + ":";
+        showTenMinutes.innerHTML = tenMinutes;
     }
 
-    function startTimer(){
-        counter = setInterval(timer, 1000);
-        return counter;
-    }
-
-     countdown.innerHTML = count;
+    showTime();
 })
 ();

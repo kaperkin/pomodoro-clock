@@ -33,11 +33,42 @@
     <div class="jumbotron">
         <button class="btn btn-success" id="start" value="start">Start</button>
         <button class="btn btn-danger" id="reset" value="reset">Reset</button>
+        <div class="countContain">
+            <div class='row'>
+                <div class='col col-xs-3'>
+                    <button id="tenMinutePlus"><span class="glyphicon glyphicon-plus"></span></button>
+                </div>
+                <div class='col col-xs-3'>
+                    <button id="minutePlus"><span class="glyphicon glyphicon-plus"></span></button>
+                </div>
+                <div class='col col-xs-3'>
+                    <button id="tenSecPlus"><span class="glyphicon glyphicon-plus"></span></button>
+                </div>
+                <div class='col col-xs-3'>
+                    <button id="secPlus"><span class="glyphicon glyphicon-plus"></span></button>
+                </div>
+            </div>
+            <div class='row'>
+                <div class="show showTenMinutes col col-xs-3" id="showTenMinutes"></div>
+                <div class="show showMinutes col col-xs-3" id="showMinutes"></div>
+                <div class="show showTenSeconds col col-xs-3" id="showTenSeconds"></div>
+                <div class="show showSeconds col col-xs-3" id="showSeconds"></div>
 
-        <div class='countContain'>
-            <button id="plus"><span class="glyphicon glyphicon-plus"></span></button>
-            <div class="countdown" id="countdown"></div>
-            <button id="minus"><span class="glyphicon glyphicon-minus"></span></button>
+            </div>
+            <div class="row">
+                <div class="col col-xs-3">
+                    <button id="tenMinuteMinus"><span class="glyphicon glyphicon-minus"></span></button>
+                </div>
+                 <div class="col col-xs-3">
+                    <button id="minuteMinus"><span class="glyphicon glyphicon-minus"></span></button>
+                </div>
+                <div class="col col-xs-3">
+                    <button id="tenSecMinus"><span class="glyphicon glyphicon-minus"></span></button>
+                </div>
+                <div class="col col-xs-3">
+                    <button id="secMinus"><span class="glyphicon glyphicon-minus"></span></button>
+                </div>
+            </div>
         </div>
 
     </div>

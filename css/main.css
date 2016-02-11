@@ -5,18 +5,23 @@
 .countContain{
     border: 3px solid #d2cf1f;
     margin: 8px;
-    min-width: 60px;
+    max-width: 200px;
     min-height: 80px;
-    left: 0;
-    top: 0;
 }
 
 .countContain div{
     display: inline-block;
-    padding: 5px;
-    font-size: 3em;
+    padding: 5px 0px;
 }
 .jumbotron{
     text-align: center;
+}
+
+.show{
+    font-size: 4rem;
+}
+
+.row{
+    width: 100%;
 }
 
